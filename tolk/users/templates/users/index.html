@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/vlad.css' %}">
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <title>TalkShop</title>
+</head>
+
+<body>
+    <div class="container">
+    <header>
+        <img class="logo" src="{% static 'users/img/logo (1).svg' %}">
+        <div class="header-menu">
+            <a href="{% url 'catalog' %}" >Каталог</a>
+            <a>Корзина</a>
+                        {% if user.is_authenticated %}
+                <!-- <a href="{% url 'logout' %}">Выйти</a> -->
+                <a href="{% url 'pro' %}">Профиль</a>
+
+            {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active" style="background-image: url({% static 'users/img/main_img.svg' %})"></div>
+            <div class="slide" style="background-image: url({% static 'users/img/main-img-2.svg' %})"></div>
+            <div class="slide" style="background-image: url({% static 'users/img/honor-main.svg' %})"></div>
+        </div>
+        <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+        </div>
+        <p class="main-katalog-text">Каталог</p>
+
+    </div>
+
+    <div class="main">
+        <p class="main-title-1">Наши новинки</p>
+        <div class="main-news">
+
+            <div class="news">
+                <div class="img-news">
+            <img  src="{% static 'users/img/galaxy-s23-ultra-common-buynow-banner-s 1.png' %}">
+            </div>
+                <div class="news-info">
+                    <p class="news-info__name">Galaxy S23 Ultra</p>
+                    <p class="news-info__price">107 999₽</p>
+                </div>
+        </div>
+        <div class="news">
+            <div class="img-news">
+            <img src="{% static 'users/img/iphone-12.png' %}">
+            </div>
+            <div class="news-info">
+                <p class="news-info__name">Huawei Mate Pro 50</p>
+                <p class="news-info__price">65990₽</p>
+            </div>
+        </div>
+            <div class="news">
+                <div class="img-news">
+            <img  src="{% static 'users/img/huawei-mate-pro-50.png' %}">
+            </div>
+            <div class="news-info">
+                <p class="news-info__name">Huawei Mate Pro 50</p>
+                <p class="news-info__price">65990₽</p>
+            </div>
+        </div>
+    </div>
+        
+            <!-- <img class="img-news" src="./img/galaxy-s23-ultra-common-buynow-banner-s 1.png">
+            <img class="img-news" src="./img/iphone-12.png">
+            <img class="img-news" src="./img/huawei-mate-pro-50.png">
+            <div class="img-news__detalis-1">
+                <p class="img-news__name">Galaxy S23 Ultra</p>
+                <p class="img-news__price">107 999₽</p>
+            </div>
+            <div class="img-news__detalis-2">
+                <p class="img-news__name">iPhone 12 </p>
+                <p class="img-news__price">69990₽</p>
+            </div>
+            <div class="img-news__detalis-3">
+                <p class="img-news__name">Huawei Mate Pro 50</p>
+                <p class="img-news__price">65990₽</p>
+            </div> -->
+        <p class="main-title-2">Популярное</p>
+        <div class="main-popular">
+            <div class="tovar" data-brand="samsung">
+                <img class="tovar-img" src="{% static 'users/img/iphone-11-pro.png' %}">
+                <div class="tovar-info">
+                    <p class="tovar-name">iPhone 11 Pro</p>
+                    <div class="buy">
+                        <a class="btn-buy">В корзину</a>
+                        <p class="tovar-price">49990₽</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tovar" data-brand="samsung">
+                <img class="tovar-img" src="{% static 'users/img/oppoA54.png' %}">
+                <div class="tovar-info">
+                    <p class="tovar-name">Oppo A54</p>
+                    <div class="buy">
+                        <a class="btn-buy">В корзину</a>
+                        <p class="tovar-price">12990₽</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tovar" data-brand="samsung">
+                <img class="tovar-img" src="{% static 'users/img/realmeC21.png' %}">
+                <div class="tovar-info">
+                    <p class="tovar-name">Realme C21</p>
+                    <div class="buy">
+                        <a class="btn-buy">В корзину</a>
+                        <p class="tovar-price">7990₽</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tovar" data-brand="samsung">
+                <img class="tovar-img" src="{% static 'users/img/pixel-6a.png' %}">
+                <div class="tovar-info">
+                    <p class="tovar-name">Pixel 6A</p>
+                    <div class="buy">
+                        <a class="btn-buy">В корзину</a>
+                        <p class="tovar-price">25990₽</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="main-katalog-text1">Каталог</p>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-menu">
+                <a class="footer-menu-btn">Каталог</a>
+                <a class="footer-menu-btn">Новинки</a>
+                <a class="footer-menu-btn">Корзина</a>
+                <a class="footer-menu-btn">Личный кабинет</a>
+            </div>
+            <div class="footer-center">
+                <img class="footer-logo" src="{% static 'users/img/logo white.png' %}">
+                <div class="social-network">
+                    <img class="social-network-svg" src="{% static 'users/img/Vector.svg' %}">
+                    <img class="social-network-svg" src="{% static 'users/img/Vector (1).svg' %}">
+                    <img class="social-network-svg" src="{% static 'users/img/Vector (2).svg' %}">
+                </div>
+                <div class="footer-text">
+                    <p class="footer-text-info">website developed by ИНТЕРНЕТ СОЮЗ</p>
+                    <p class="footer-text-info">© copyright 2023</p>
+                </div>
+            </div>
+            <div class="address">
+                <p class="address-info">Tolkshop.ru</p>
+                <p class="address-info">Ул. Пушкина 27</p>
+                <p class="address-info">+7(904) 055-87-45</p>
+                <p class="address-info">support@tolkshop.ru</p>
+            </div>                   
+        </div>
+     
+    </div>
+
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'users/js/main.js' %}"></script>
+</body>
+
+</html>

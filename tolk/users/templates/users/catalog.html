@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/users/css/vlad.css' %}">
+    <title>Каталог</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <a href="{% url 'index' %}"><img class="logo" src="{% static 'users/img/logo (1).svg' %}"></a>
+        <div class="header-menu">
+            <a href="./catalog.html">Каталог</a>
+            <a>Корзина</a>
+            {% if user.is_authenticated %}
+                <!-- <a href="{% url 'logout' %}">Выйти</a> -->
+                <a href="{% url 'pro' %}">Профиль</a>
+      
+            {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="sort">
+        <p class="sort-text">Сортировать по:</p>
+        <div class="sort-btn">
+            <div class="sort-btn-price" onclick="myFunction()" id="sortbrend1">Цене<img class="sortb1" src="{% static 'users/img/Vector-4.svg' %}"></div>
+            <div class="grid">
+                <div class="sort-btn-brend" onclick="myFunction()" id="sortbrend">Бренду<img class="sortb" src="{% static 'users/img/Vector-4.svg' %}"></div>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="sort-button" href="{% url 'catalog' %}">Все</a>
+                    <a class="sort-button" data-brand="apple" href="#">Apple</a>
+                    <a class="sort-button" data-brand="samsung" href="#">Samsung</a>
+                    <a class="sort-button" data-brand="honor" href="#">Honor</a>
+                    <a class="sort-button" data-brand="xiaomi" href="#">Xiaomi</a>
+                    <a class="sort-button" data-brand="huawei" href="#">Huawei</a>
+                    <a class="sort-button" data-brand="oppo" href="#">Oppo</a>
+                    <a class="sort-button" data-brand="realme" href="#">Realme</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="products">
+
+        <div class="tovar" data-brand="samsung" data-price="49990">
+            <a href="{% url 'tovar' %}">
+            <img class="tovar-img" src="{% static 'users/img/galaxy-s22.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Galaxy S21</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">49990₽</p>
+                </div>
+            </div>
+        </div></a>
+
+        <div class="tovar" data-brand="samsung" data-price="59990">
+            <img class="tovar-img" src="{% static 'users/img/galaxy-s22 (1).png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Galaxy S22</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">59990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="huawei" data-price="19990">
+            <img class="tovar-img" src="{% static 'users/img/huawei-nova-9-se.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Huawei nova 9 SE</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">19990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="apple" data-price="49990">
+            <img class="tovar-img" src="{% static 'users/img/iphone-11-pro.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">iPhone 11 Pro</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">49990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="xiaomi" data-price="29990">
+            <img class="tovar-img" src="{% static 'users/img/xiaomi-12t.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Xiaomi 12T</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">29990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="xiaomi" data-price="9990">
+            <img class="tovar-img" src="{% static 'users/img/xiaomi-redmi-9c.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Xiaomi Redmi 9C</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">9990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="apple" data-price="89990">
+            <img class="tovar-img" src="{% static 'users/img/iphone-14-pro.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">iPhone 14 Pro</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">89990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="xiaomi" data-price="11990">
+            <img class="tovar-img" src="{% static 'users/img/xiaomi-redmi-10.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Xiaomi Redmi 10</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">11990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="xiaomi" data-price="12990">
+            <img class="tovar-img" src="{% static 'users/img/xiaomi-redmi-note-11.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Xiaomi Redmi Note 11</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">12990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="honor" data-price="35990">
+            <img class="tovar-img" src="{% static 'users/img/honor-50.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Honor 50</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">35990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="apple" data-price="69990">
+            <img class="tovar-img" src="{% static 'users/img/iphone-12.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">iPhone 12</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">69990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="samsung" data-price="107990">
+            <img class="tovar-img" src="{% static 'users/img/galaxy-s23-ultra.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Galaxy S23 Ultra</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">107990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="huawei" data-price="65990">
+            <img class="tovar-img" src="{% static 'users/img/huawei-mate-pro-50.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Huawei Mate Pro 50</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">65990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="samsung" data-price="73990">
+            <img class="tovar-img" src="{% static 'users/img/galaxy-z-flip-4.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Galaxy Z Flip4</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">73990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="oppo" data-price="12990">
+            <img class="tovar-img" src="{% static 'users/img/oppoA54.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Oppo A54</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">12990₽</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tovar" data-brand="realme" data-price="7990">
+            <img class="tovar-img" src="{% static 'users/img/realmeC21.png' %}">
+            <div class="tovar-info">
+                <p class="tovar-name">Realme C21</p>
+                <div class="buy">
+                    <a class="btn-buy">В корзину</a>
+                    <p class="tovar-price">7990₽</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-menu">
+                    <a class="footer-menu-btn">Каталог</a>
+                    <a class="footer-menu-btn">Новинки</a>
+                    <a class="footer-menu-btn">Корзина</a>
+                    <a class="footer-menu-btn">Личный кабинет</a>
+                </div>
+                <div class="footer-center">
+                    <img class="footer-logo" src="{% static 'users/img/logo white.png' %}">
+                    <div class="social-network">
+                        <img class="social-network-svg" src="{% static 'users/img/Vector.svg' %}">
+                        <img class="social-network-svg" src="{% static 'users/img/Vector (1).svg' %}">
+                        <img class="social-network-svg" src="{% static 'users/img/Vector (2).svg' %}">
+                    </div>
+                    <div class="footer-text">
+                        <p class="footer-text-info">website developed by ИНТЕРНЕТ СОЮЗ</p>
+                        <p class="footer-text-info">© copyright 2023</p>
+                    </div>
+                </div>
+                <div class="address">
+                    <p class="address-info">Tolkshop.ru</p>
+                    <p class="address-info">Ул. Пушкина 27</p>
+                    <a class="address-info">+7(904) 055-87-45</a>
+                    <p class="address-info">support@tolkshop.ru</p>
+                </div>                   
+            </div>
+         
+        </div>
+
+    </footer>
+
+<script src="{% static 'users/js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+
+html, body {
+    /* Убирает прокрутку по горизонтале, для мобильной версии */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+	font-family: 'Montserrat-Bold'; 
+	src: url(./Montserrat/static/Montserrat-Bold.ttf) format("truetype");  
+    font-style: normal; 
+}
+
+@font-face {
+	font-family: 'Montserrat-Black'; 
+    src: url(./Montserrat/static/Montserrat-Black.ttf) format("truetype"); 
+    font-style: normal; 
+}
+
+
+
+.slider-katalog-text:hover{
+color: white;
+}
+
+
+
+header{
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Montserrat-Bold'; 
+}
+
+
+.logo{
+    height: 38px;
+    width: 105px;
+    margin-left: 40px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.header-menu{
+    margin-right: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 276px;
+    color: #353535;
+    
+}
+
+a{
+    font-family: 'Montserrat-Bold';
+    cursor: pointer;
+    color: #353535;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+p{
+    color: #353535; 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+.slider-container {
+    width: 713px;
+    height: 507px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 42px;
+    margin-top: 54px;
+    margin-bottom: 234px;
+    display: grid;
+    justify-content: center;
+  }
+  
+  .slider {
+    width: 713px;
+    height: 507px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  
+  .slider-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #999;
+    margin: -16px 10px;
+    cursor: pointer;
+  }
+  
+  .slider-dot.active {
+    background-color: #333;
+  }
+  
+  .slider-katalog{
+    display: flex;
+    flex-direction: none;
+    align-items: flex-start;
+    padding: 10px 50px;
+    gap: 10px;
+    width: 168px;
+    height: 38px;
+    justify-content: center;
+
+/* black */
+
+    background: #353535;
+    border-radius: 5px;
+    margin: 0 auto;
+   
+}
+
+.slider-katalog-text{
+    font-family: 'Montserrat-Bold';
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 19px;
+
+
+}
+
+.main-katalog{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 50px;
+    gap: 10px;
+    width: 168px;
+    height: 38px;
+    justify-content: center;
+
+/* black */
+    margin: 0 auto;
+    background: #353535;
+    border-radius: 5px;
+    
+}
+
+
+
+.main-katalog-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat-Bold';
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 19px;
+    border-radius: 5px;
+    height: 38px;
+    background-color: #353535;
+    width: 168px;
+    margin-left: 270px;
+    cursor: pointer;
+}  
+
+.main-katalog-text1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat-Bold';
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 19px;
+    border-radius: 5px;
+    height: 38px;
+    background-color: #353535;
+    width: 168px;
+    margin-left: 600px;
+    cursor: pointer;
+}
+
+
+.main {
+    display: grid;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 199px;
+
+}
+
+.main-title-1 {
+    font-style: normal;
+    font-family: 'Montserrat-Black';
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 46px;
+}
+
+.main-news {    
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    margin-bottom: 150px;
+    flex-wrap: wrap;
+    margin: 0 0;
+    max-width: 1440px;
+
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.img-news {
+ /* Изменили ширину изображений */
+    
+    max-width: 441px; /* Добавили высоту auto, чтобы сохранить пропорции */
+}
+
+.news-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 19px;
+    margin-right: 16px;
+    height: 52px;
+    align-items: center;
+    font-style: normal;
+    font-family: 'Montserrat-Black';
+    font-size: 15px;
+    line-height: 18px;
+    align-items: center;
+    color: #353535;
+    max-width: 440px;
+
+}
+
+
+
+
+
+.main-title-2 {
+    font-style: normal;
+    font-family: 'Montserrat-Black';
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 70px;
+    margin-top: 150px;
+}
+
+.main-popular {
+    display: grid;
+    grid-template-columns: repeat(4, 324px);
+    column-gap: 20px;
+}
+
+.tovar{
+    display: grid;
+    width: 325px;
+    height: 403px;
+    background: #EEEEEE;
+    border-radius: 5px;
+    margin-bottom: 90px;
+}
+
+.tovar-img{
+    width: 220px;
+    height: 220px;
+    margin-left: 51px;
+    margin-top: 43px;
+}
+
+.tovar-info{
+    width: 325px;
+    height: 117px;
+    background-color: #F9F9F9;
+    margin-top: 28px;
+}
+
+.tovar-name{
+    font-family: 'Montserrat-Black';
+    font-size: 20px;
+    margin-left: 11px;
+    margin-top: 9.72px;
+}
+
+.btn-buy{
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    background-color: #353535;
+    color: white;
+    font-size: 15px;
+    font-family: 'Montserrat-Black';
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.buy{
+    display: flex;
+    margin-top: 45px;
+}
+
+.tovar-price{
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Montserrat-Black';
+    margin-left: 116px;
+}
+
+/*  */
+ 
+
+  /* @media screen and (max-width: 1020px) {
+    .main-news {
+      flex-wrap: wrap;
+    }
+  
+    .news {
+      width: 100%;
+      margin: 0 auto;
+      
+    }
+    .main-title-1{
+       
+    }} */

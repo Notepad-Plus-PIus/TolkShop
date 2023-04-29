@@ -1,0 +1,23 @@
+<!-- {% block title %}Login{% endblock %} -->
+
+{% block content %}
+<div style="display: grid; justify-content: center; background: #EEEEEE; max-width: 400px; margin-left: auto; margin-right: auto; border-radius: 5px; margin-top: 20vh;">
+  <h2  style="color: #353535; text-align: center;">Вход</h2>
+  
+    <form method="post">
+      {% csrf_token %}
+      <table>
+        <!-- {{ form.as_p }} -->
+        {% for f in form %}
+        <label for="{{ f.id_for_label }}" style="margin-left: 25px;">{{f.label}}</label><p style="margin-left: 25px; margin-top: 5px;">{{ f }}</p>
+        <div>{{ f.errors }}</div>
+        {% endfor %}
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="submit" value="Войти" style="padding-left: 45px; padding-right: 45px; padding-top: 6px; padding-bottom: 7px; background-color: #353535; color: white; font-size: 15px; font-family: 'Montserrat-Bold';  border-radius: 5px; margin-left: 10px; cursor: pointer; margin-left: 35px;"></td>
+        </tr>                
+      </table>
+      <p><span style="padding-right: 5px;">Нет аккаунта?</span><a href="{% url 'signup' %}">Зарегистрируйся!</a></p> 
+    </form>
+ </div> 
+{% endblock %}

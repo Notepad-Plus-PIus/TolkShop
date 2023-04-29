@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'users/css/vlad.css'%}">
+    <title>Страница товара</title>
+</head>
+<body>
+<div class="container">
+        <header>
+            <img class="logo" src="{% static 'users/img/logo (1).svg' %}">
+            <div class="header-menu">
+                <a href="./catalog.html">Каталог</a>
+                <a>Корзина</a>
+                            {% if user.is_authenticated %}
+                <!-- <a href="{% url 'logout' %}">Выйти</a> -->
+                <a href="{% url 'pro' %}">Профиль</a>
+
+            {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+            </div>
+        </header>
+
+    <div class="block-tovar">
+        <img class="block-tovar-img" src="{% static 'users/img/galaxy-s23-ultra111.png' %}">
+        <div class="block-tovar-info">
+            <p class="block-tovar-name">Galaxy S21</p>
+            <p class="block-tovar-accessories">Частота процессора: 2.84 ГГц, 2,4 ГГц, 1,8 ГГц
+                Разрешение экрана: 2340 x 1080 (FHD+)
+                Размеры (ВxШxГ, мм): 155.7 x 74.5 x 7.9 
+                Основная камера: 12.0 MП + 12.0 MП + 8.0 MП
+                Фронтальная камера: 32.0 MП
+            </p>
+            <div class="block-tovar-btn">
+                <div class="navigation">
+                    <div for="r1" class="bar1" id="s1"></div>
+                    <div for="r2" class="bar2" id="s2"></div>
+                    <div for="r3" class="bar3" id="s3"></div>
+                 </div>
+                 <div class="block-tovar-price">49990₽</div>
+                 <div class="block-btn">
+                    <p class="block-tovar-buy">Купить</p>
+                    <p class="block-tovar-cart">В корзину</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-menu">
+                    <a class="footer-menu-btn">Каталог</a>
+                    <a class="footer-menu-btn">Новинки</a>
+                    <a class="footer-menu-btn">Корзина</a>
+                    <a class="footer-menu-btn">Личный кабинет</a>
+                </div>
+
+                <div class="footer-center">
+                    <img class="footer-logo" src="{% static 'users/img/logo white.png' %}">
+                    <div class="social-network">
+                        <img class="social-network-svg" src="{% static 'users/img/Vector.svg' %}">
+                        <img class="social-network-svg" src="{% static 'users/img/Vector (1).svg' %}">
+                        <img class="social-network-svg" src="{% static 'users/img/Vector (2).svg' %}">
+                    </div>
+                    <div class="footer-text">
+                        <p class="footer-text-info">website developed by ИНТЕРНЕТ СОЮЗ</p>
+                        <p class="footer-text-info">© copyright 2023</p>
+                    </div>
+                </div>
+                <div class="address">
+                    <p class="address-info">Tolkshop.ru</p>
+                    <p class="address-info">Ул. Пушкина 27</p>
+                    <p class="address-info">+7(904) 055-87-45</p>
+                    <p class="address-info">support@tolkshop.ru</p>
+                </div>                   
+            </div>
+         
+        </div>
+
+    </footer>
+</body>
+</html>
